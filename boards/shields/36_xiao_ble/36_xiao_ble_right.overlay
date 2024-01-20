@@ -1,4 +1,4 @@
-#include "36_xiao_ble_right.dtsi" // Notice that the main dtsi files are included in the overlay.
+#include "36_xiao_ble.dtsi" // Notice that the main dtsi files are included in the overlay.
 
 &kscan0 {
     row-gpios
