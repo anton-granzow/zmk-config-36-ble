@@ -1,0 +1,5 @@
+config SHIELD_36_XIAO_BLE_LEFT
+    def_bool $(shields_list_contains,36_xiao_ble_left)
+
+config SHIELD_36_XIAO_BLE_RIGHT
+    def_bool $(shields_list_contains,36_xiao_ble_right)
