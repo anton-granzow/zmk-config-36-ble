@@ -1,12 +1,6 @@
 #include "36_xiao_ble.dtsi" // Notice that the main dtsi files are included in the overlay.
 
 &kscan0 {
-    row-gpios
-        = <&xiao_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row A from the schematic file
-        , <&xiao_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row B from the schematic file
-        , <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row C from the schematic file
-        , <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row D from the schematic file
-        ;
     col-gpios
         = <&xiao_d 6 GPIO_ACTIVE_HIGH> // col1 in the schematic
         , <&xiao_d 5 GPIO_ACTIVE_HIGH> // col2 in the schematic
