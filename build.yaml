@@ -12,7 +12,7 @@
 #
 ---
 include:
+  # - board: seeeduino_xiao_ble
+  #   shield: 36_xiao_ble_right
   - board: seeeduino_xiao_ble
-    shield: 36_xiao_ble_right
-  - board: seeeduino_xiao_ble
-    shield: 36_xiao_ble_left
+    shield: 36_xiao_ble_left_test
