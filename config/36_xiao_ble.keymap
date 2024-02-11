@@ -1,49 +1,65 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define DEFAULT 0
+#define SYM 1
+#define NUM 2
+#define NAV 3
+#define SPECIAL 4
+#define ADJUST 5
 
 / {
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
-   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P   
-   &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI
-   &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
-        &kp ESC &kp ENT &kp SPACE   &kp RET &mo 2 &kp RALT
+                           &kp Q &kp W &kp E &kp R &kp T                          &kp Y &kp U  &kp I &kp O   &kp DEL   
+                           &kp A &mt LGUI S &mt LCTRL D &mt LALT F &kp G          &kp H &kp LALT J &kp LCTRL K &kp LGUI L  &kp P
+                           &kp Z &kp X &kp C &kp V &kp B                          &kp N &kp M  &kp COMMA &kp DOT &sk RALT
+                           &kp ESC &lt SYM RET &lt NUM SPACE       &lt NUM TAB &kp LSHIFT &kp BSPC
                         >;
                 };
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+                sym_layer {
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+                           &tog ADJUST &kp AT &kp LEFT_BRACKET &kp RIGHT_BRACKET &none         &kp EXCLAMATION  &kp U  &kp I     &kp O   &kp P   
+                           &none &kp BACKSLASH &kp LEFT_BRACE &kp RIGHT_BRACE &kp TILDE        &kp QUESTION  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp COLON  &none
+                           &none &kp UNDERSCORE &kp SLASH &kp PIPE &none                       &kp GRAVE &kp APOSTROPHE  &kp DOUBLE_QUOTES &kp SEMICOLON &none
+                           &trans &trans &trans                                                &trans &trans &trans
                         >;
                 };
-
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+                num_layer {
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+                           &tog ADJUST &kp AMPS &kp HASH &kp DOLLAR &kp PERCENT &kp CARET &kp AMPS &kp ASTERISK &kp EQUALS &none
+                           &none &kp N2 &kp N3 &kp N4 &kp N5                    &kp N6 &kp N7  &kp N8 &kp N9   &none
+                           &none &none &kp SLASH &kp N1 &kp MINUS               &kp PLUS &kp N0  &kp COMMA &kp DOT &none
+                           &trans &trans &trans                                 &trans &trans &trans
+                        >;
+                };
+                num_layer {
+                        bindings = <
+                           &tog ADJUST &kp F1 &kp F2 &kp F3 &kp F4     &kp HOME &kp PG_UP &kp PG_DN &kp END &tog ADJUST
+                           &none &kp F5 &kp F6 &kp F7 &kp F8           &kp LEFT &kp DOWN  &kp UP &kp RIGHT  &none
+                           &none &kp F9 &kp F10 &kp F11 &kp F12        &none &none  &none &none &none
+                           &trans &trans &trans                        &trans &trans &trans
+                        >;
+                };
+                special_ layer {
+                        bindings = <
+                           &tog ADJUST &kp F1 &kp F2 &kp F3 &kp F4     &kp HOME &kp PG_UP &kp PG_DN &kp END &tog ADJUST
+                           &none &kp F5 &kp F6 &kp F7 &kp F8           &kp LEFT &kp DOWN  &kp UP &kp RIGHT  &none
+                           &none &kp F9 &kp F10 &kp F11 &kp F12        &none &none  &none &none &none
+                           &trans &trans &trans                        &trans &trans &trans
+                        >;
+                };
+                adjust_layer {
+                        bindings = <
+                           &tog ADJUST &none &none &none &none                                  &none &none &none &none &tog ADJUST
+                           &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5
+                           &none &none &none &bt BT_CLR &none                                   &none &bt BT_CLR &none &none &none
+                           &none &none &tog ADJUST                                              &tog ADJUST &none &none
                         >;
                 };
         };
