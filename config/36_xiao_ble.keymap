@@ -25,10 +25,10 @@
                 };
                 sym_layer {
                         bindings = <
-                           &tog ADJUST &kp AT &kp LEFT_BRACKET &kp RIGHT_BRACKET &none         &kp EXCLAMATION  &kp U  &kp I     &kp O   &kp P   
+                           &tog ADJUST &kp AT &kp LEFT_BRACKET &kp RIGHT_BRACKET &none         &kp EXCLAMATION  &none  &none  &none  &none
                            &none &kp BACKSLASH &kp LEFT_BRACE &kp RIGHT_BRACE &kp TILDE        &kp QUESTION  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp COLON  &none
                            &none &kp UNDERSCORE &kp SLASH &kp PIPE &none                       &kp GRAVE &kp APOSTROPHE  &kp DOUBLE_QUOTES &kp SEMICOLON &none
-                           &trans &trans &trans                                                &trans &trans &trans
+                           &none &none &none                                                &none &none &none
                         >;
                 };
                 num_layer {
@@ -36,7 +36,7 @@
                            &tog ADJUST &kp AT &kp HASH &kp DOLLAR &kp PERCENT &kp CARET &kp AMPS &kp ASTERISK &kp EQUAL &none
                            &none &kp N2 &kp N3 &kp N4 &kp N5                    &kp N6 &kp N7  &kp N8 &kp N9   &none
                            &none &none &kp SLASH &kp N1 &kp MINUS               &kp PLUS &kp N0  &kp COMMA &kp DOT &none
-                           &trans &trans &trans                                 &trans &trans &trans
+                           &none &none &none                                 &none &none &none
                         >;
                 };
                 nav_layer {
@@ -44,7 +44,7 @@
                            &tog ADJUST &kp F1 &kp F2 &kp F3 &kp F4     &kp HOME &kp PG_UP &kp PG_DN &kp END &tog ADJUST
                            &none &kp F5 &kp F6 &kp F7 &kp F8           &kp LEFT &kp DOWN  &kp UP &kp RIGHT  &none
                            &none &kp F9 &kp F10 &kp F11 &kp F12        &none &none  &none &none &none
-                           &trans &trans &trans                        &trans &trans &trans
+                           &none &none &none                        &none &none &none
                         >;
                 };
                 special_layer {
@@ -52,7 +52,7 @@
                            &tog ADJUST &kp F1 &kp F2 &kp F3 &kp F4     &kp HOME &kp PG_UP &kp PG_DN &kp END &tog ADJUST
                            &none &kp F5 &kp F6 &kp F7 &kp F8           &kp LEFT &kp DOWN  &kp UP &kp RIGHT  &none
                            &none &kp F9 &kp F10 &kp F11 &kp F12        &none &none  &none &none &none
-                           &trans &trans &trans                        &trans &trans &trans
+                           &none &none &none                        &none &none &none
                         >;
                 };
                 adjust_layer {
