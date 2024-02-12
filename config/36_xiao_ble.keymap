@@ -38,7 +38,7 @@
                            &trans &trans &trans                                 &trans &trans &trans
                         >;
                 };
-                num_layer {
+                nav_layer {
                         bindings = <
                            &tog ADJUST &kp F1 &kp F2 &kp F3 &kp F4     &kp HOME &kp PG_UP &kp PG_DN &kp END &tog ADJUST
                            &none &kp F5 &kp F6 &kp F7 &kp F8           &kp LEFT &kp DOWN  &kp UP &kp RIGHT  &none
