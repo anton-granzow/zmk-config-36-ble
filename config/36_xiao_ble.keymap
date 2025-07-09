@@ -25,7 +25,7 @@
                         bindings = <
                            &kp Q &kp W &kp E &kp R &kp T                          &kp Y &kp U  &kp I &kp O   &kp DEL   
                            &kp A &mt LGUI S &mt LCTRL D &mt LALT F &kp G          &kp H &mt LALT J &mt LCTRL K &mt LGUI L  &kp P
-                           &kp Z &kp X &kp C &kp V &kp B                          &kp N &kp M  &kp COMMA &kp DOT &sk RALT
+                           &lt SPECIAL Z &kp X &kp C &kp V &kp B                  &kp N &kp M  &kp COMMA &kp DOT &sk RALT
                            &kp ESC &lt SYM RET &lt NUM SPACE       &lt NAV TAB &kp LSHIFT &kp BSPC
                         >;
                 };
@@ -59,9 +59,9 @@
                 special_layer {
                         display-name = "Spec";
                         bindings = <
-                           &sl ADJUST &kp F1 &kp F2 &kp F3 &kp F4     &kp HOME &kp PG_UP &kp PG_DN &kp END &tog ADJUST
-                           &none &kp F5 &kp F6 &kp F7 &kp F8           &kp LEFT &kp DOWN  &kp UP &kp RIGHT  &none
-                           &none &kp F9 &kp F10 &kp F11 &kp F12        &none &none  &none &none &none
+                           &sl ADJUST &none &none &none &none     &none &none &none &none &none
+                           &none &kp F2 &kp F3 &kp F4 &kp F5           &kp F6 &kp F7  &kp F8 &kp F9 &none
+                           &none &kp none &none &kp F1 &kp F11        &kp F12 &kp F10  &kp F11 &kp F12 &none
                            &none &none &none                        &none &none &none
                         >;
                 };
